@@ -26,30 +26,9 @@
 
 **meshtastic-sx1302** は、SX1302 LoRa コンセントレータ向けの [Meshtastic](https://meshtastic.org) ファームウェア移植です。主力ターゲットは Seeed SenseCAP M1 —— Helium マイナーとして出荷された Raspberry Pi CM4 + WM1302 の組み合わせで、本ファームウェアはこれを、SX1261 による LBT（Listen-Before-Talk）対応の常時稼働 Meshtastic メッシュゲートウェイへと生まれ変わらせます。
 
-```mermaid
-flowchart LR
-    subgraph ip ["🌐 IP 側"]
-        APP["スマホアプリ"]
-        WEB["ブラウザ"]
-        CLI["Meshtastic CLI"]
-    end
-    subgraph gw ["⚙️ SenseCAP M1 · Raspberry Pi OS"]
-        DAEMON["meshtasticd<br/>（本ファームウェア）"]
-        SX1302["SX1302 コンセントレータ<br/>8 チャネル並列"]
-        SX1261["SX1261<br/>LBT センシング"]
-        TEMP["STTS751<br/>温度センサー"]
-    end
-    subgraph mesh ["📻 LoRa メッシュ"]
-        NODE["Meshtastic ノード<br/>トラッカー · センサー · 中継"]
-    end
-    APP -- "TCP :4403" --> DAEMON
-    WEB -- "HTTPS :9443" --> DAEMON
-    CLI -- "TCP :4403" --> DAEMON
-    DAEMON <--> SX1302
-    SX1302 --- SX1261
-    DAEMON --- TEMP
-    SX1302 <-.-> NODE
-```
+<p align="center">
+  <img src="media/architecture.svg" alt="Architecture: Meshtastic clients connect over TCP/HTTPS to meshtasticd on SenseCAP M1, which drives the SX1302 8-channel concentrator and SX1261 LBT over SPI plus the STTS751 temperature sensor over I2C, bridging IP to the LoRa mesh" width="100%" />
+</p>
 
 [Meshtastic ドキュメント][docs] · [クイックスタート](#クイックスタート) · [ハードウェア要件](#ハードウェア要件) · [バグ報告][issues]
 

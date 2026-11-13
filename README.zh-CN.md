@@ -26,30 +26,9 @@
 
 **meshtastic-sx1302** 是面向 SX1302 LoRa 集中器硬件的 [Meshtastic](https://meshtastic.org) 固件移植。首要目标设备是 Seeed SenseCAP M1——一台以 Helium 矿机身份出厂的"树莓派 CM4 + WM1302"组合——本固件将其改造为功能完整、全天候在线的 Meshtastic 网格网关，并支持基于 SX1261 的 LBT（先听后说）。
 
-```mermaid
-flowchart LR
-    subgraph ip ["🌐 IP 侧"]
-        APP["手机 App"]
-        WEB["浏览器"]
-        CLI["Meshtastic CLI"]
-    end
-    subgraph gw ["⚙️ SenseCAP M1 · Raspberry Pi OS"]
-        DAEMON["meshtasticd<br/>（本固件）"]
-        SX1302["SX1302 集中器<br/>8 信道并行"]
-        SX1261["SX1261<br/>LBT 检测"]
-        TEMP["STTS751<br/>温度传感"]
-    end
-    subgraph mesh ["📻 LoRa 网格"]
-        NODE["Meshtastic 节点<br/>追踪器 · 传感器 · 中继"]
-    end
-    APP -- "TCP :4403" --> DAEMON
-    WEB -- "HTTPS :9443" --> DAEMON
-    CLI -- "TCP :4403" --> DAEMON
-    DAEMON <--> SX1302
-    SX1302 --- SX1261
-    DAEMON --- TEMP
-    SX1302 <-.-> NODE
-```
+<p align="center">
+  <img src="media/architecture.svg" alt="Architecture: Meshtastic clients connect over TCP/HTTPS to meshtasticd on SenseCAP M1, which drives the SX1302 8-channel concentrator and SX1261 LBT over SPI plus the STTS751 temperature sensor over I2C, bridging IP to the LoRa mesh" width="100%" />
+</p>
 
 [Meshtastic 文档][docs] · [快速开始](#快速开始) · [硬件要求](#硬件要求) · [提交 Bug][issues]
 
