@@ -27,7 +27,7 @@
 **meshtastic-sx1302** es un port del firmware [Meshtastic](https://meshtastic.org) para hardware concentrador LoRa SX1302. Su objetivo estrella es el SenseCAP M1 de Seeed — un conjunto Raspberry Pi CM4 + WM1302 vendido originalmente como minero de Helium — al que convierte en una pasarela Meshtastic completa, siempre activa, con soporte de LBT (Listen-Before-Talk) vía SX1261.
 
 <p align="center">
-  <img src="media/architecture.svg" alt="Architecture: Meshtastic clients connect over TCP/HTTPS to meshtasticd on SenseCAP M1, which drives the SX1302 8-channel concentrator and SX1261 LBT over SPI plus the STTS751 temperature sensor over I2C, bridging IP to the LoRa mesh" width="100%" />
+  <img src="media/architecture.jpg" alt="Architecture: Meshtastic clients connect over TCP/HTTPS to meshtasticd on SenseCAP M1, which drives the SX1302 8-channel concentrator and SX1261 LBT over SPI plus the STTS751 temperature sensor over I2C, bridging IP to the LoRa mesh" width="100%" />
 </p>
 
 [Documentación de Meshtastic][docs] · [Inicio rápido](#inicio-rápido) · [Hardware](#requisitos-de-hardware) · [Reportar un bug][issues]
