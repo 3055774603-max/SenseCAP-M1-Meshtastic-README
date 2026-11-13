@@ -8,7 +8,7 @@
   <a href="https://github.com/Seeed-Studio/meshtastic-sx1302/releases">
     <img alt="GitHub release" src="https://img.shields.io/github/v/release/Seeed-Studio/meshtastic-sx1302" />
   </a>
-  <a href="https://github.com/Seeed-Studio/meshtastic-sx1302/blob/master/LICENSE">
+  <a href="https://github.com/Seeed-Studio/meshtastic-sx1302/blob/sx130x_lbt_port/LICENSE">
     <img alt="ライセンス" src="https://img.shields.io/github/license/Seeed-Studio/meshtastic-sx1302" />
   </a>
   <a href="https://github.com/Seeed-Studio/meshtastic-sx1302/commits">
