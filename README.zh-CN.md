@@ -180,7 +180,6 @@ sudo ./install.sh
 
 - 解压目录名带有 git 提交哈希后缀（如 `-e3a6d9dcf`），所以 `cd` 使用了通配符。
 - `install.sh` 会将二进制复制到 `/usr/bin`、配置安装到 `/etc/meshtasticd/`、注册 `meshtasticd` systemd 服务、安装运行库并开启自启动。
-- 本仓库目前为**私有仓库**——下载 Release 需登录有权限的 GitHub 账号。若 `wget` 返回 404，请在浏览器打开 [Releases][releases] 页面手动下载最新的 `.tar.gz`。
 
 ### 方式 B —— Docker 源码编译
 
@@ -282,9 +281,6 @@ dtoverlay=gpio-fan,gpiopin=13,temp=55000,hyst=5000
 
 **必须要 SenseCAP M1 吗？**
 M1 是开箱即用的路径，安装包也以它为目标。进阶用户可以把构建适配到其他 SX1302 主机——探测脚本是很好的起点。
-
-**Release 下载 404？**
-仓库目前为私有——请登录有权限的 GitHub 账号下载，并到 [Releases][releases] 页面确认附件的确切文件名。
 
 **装了还能继续挖 Helium 吗？**
 不能——本固件完整替换了挖矿软件栈。把它当作通往一张更有用的网络的单程票。

@@ -180,7 +180,6 @@ Remarques :
 
 - Le nom du répertoire du paquet comporte un suffixe de hach git (ex. `-e3a6d9dcf`) — d'où le joker dans le `cd` ci-dessus.
 - `install.sh` copie le binaire vers `/usr/bin`, installe les configs dans `/etc/meshtasticd/`, enregistre le service systemd `meshtasticd`, installe les bibliothèques et active le démarrage automatique.
-- Ce dépôt est actuellement **privé** — le téléchargement des releases requiert un compte GitHub connecté et autorisé. Si `wget` renvoie 404, ouvrez la page [Releases][releases] dans un navigateur et récupérez manuellement le dernier `.tar.gz`.
 
 ### Option B — Compiler depuis les sources avec Docker
 
@@ -282,9 +281,6 @@ Uniquement les modules incluant un **SX126x** (compatibles LBT). Lancez la [vér
 
 **Ai-je besoin d'un SenseCAP M1 ?**
 Le M1 est le chemin clé en main et la cible du paquet d'installation. Les utilisateurs avancés peuvent adapter la compilation à d'autres hôtes SX1302 — le script de sonde est un bon point de départ.
-
-**Le téléchargement de la release renvoie 404.**
-Le dépôt est actuellement privé — téléchargez en étant connecté à un compte GitHub autorisé, et consultez la page [Releases][releases] pour le nom exact de l'asset.
 
 **Puis-je continuer à miner Helium avec ça ?**
 Non — ce firmware remplace entièrement la pile de minage. Considérez-le comme un billet aller simple vers un réseau plus utile.
